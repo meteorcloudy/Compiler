@@ -1,0 +1,45 @@
+
+<Program>  →  begin <Dec_Statement_List>;<Exe_Statement_List> end
+
+<Dec_Statement_List>  →  <Dec_Statement><_Dec_Statement_List>
+<_Dec_Statement_List>  →  ;<Dec_Statement><_Dec_Statement_List>|ε
+
+<Dec_Statement>  →  <Dec_Var>│<Dec_Proc>
+
+<Dec_Var>  →  integer<Variable>
+
+<Variable>  →  <SYMBOL>
+
+<Dec_Proc>  →  integer function <SYMBOL>(<Argument>);<Proc_Body>
+
+<Argument>  →  <Variable>
+
+<Proc_Body>  →  begin <Dec_Statement_List>;<Exe_Statement_List> end
+
+<Exe_Statement_List>  →  <Exe_Statement><_Exe_Statement_List>
+<_Exe_Statement_List>  →  ;<Exe_Statement><_Exe_Statement_List>|ε
+
+<Exe_Statement>  →  <Read_Statement>│<Write_Statement>│<Ass_Statement>│<Con_Statement>
+
+<Read_Statement>  →  read(<Variable>)
+
+<Write_Statement>  →  write(<Variable>)
+
+<Ass_Statement>  →  <Variable>:=<Arith_Expression>
+
+<Arith_Expression>  →  <Item><_Arith_Expression>
+<_Arith_Expression>  →  -<Item><_Arith_Expression>|ε
+
+<Item>  →  <Factor><_Item>
+<_Item>  →  *<Factor><_Item>|ε
+
+<Factor>  →  <Variable>│<CONSTANT>│<Proc_Invoke>
+
+<Proc_Invoke>  →  <SYMBOL>(<Arith_Expression>)
+
+<Con_Statement>  →  if<Con_Expression>then<Exe_Statement>else<Exe_Statement>
+
+<Con_Expression>  →  <Arith_Expression><Real_Op><Arith_Expression>
+
+<Real_Op>  →  <│<=│>│>=│=│<>
+	

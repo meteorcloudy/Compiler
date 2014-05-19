@@ -1,0 +1,5035 @@
+
+Stack:
+
+Move_In : begin
+
+Stack:
+#0 : begin(begin)
+
+Move_In : integer
+
+Stack:
+#0 : begin(begin)
+#1 : integer(integer)
+
+Move_In : k
+
+Stack:
+#0 : begin(begin)
+#1 : integer(integer)
+#2 : SYMBOL(k)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : integer(integer)
+#2 : Variable(k)
+
+Reduce : <Dec_Var>  =>  integer<Variable>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Var(k)
+
+Reduce : <Dec_Statement>  =>  <Dec_Var>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+
+Move_In : ;
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+
+Move_In : integer
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+
+Move_In : function
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+
+Move_In : F
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+
+Move_In : (
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+
+Move_In : n
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : SYMBOL(n)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Variable(n)
+
+Reduce : <Argument>  =>  <Variable>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+
+Move_In : )
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+
+Move_In : ;
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+
+Move_In : begin
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+
+Move_In : integer
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : integer(integer)
+
+Move_In : x
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : integer(integer)
+#12 : SYMBOL(x)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : integer(integer)
+#12 : Variable(x)
+
+Reduce : <Dec_Var>  =>  integer<Variable>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Var(x)
+
+Reduce : <Dec_Statement>  =>  <Dec_Var>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+
+Move_In : ;
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+
+Move_In : integer
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : integer(integer)
+
+Move_In : n
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : integer(integer)
+#14 : SYMBOL(n)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : integer(integer)
+#14 : Variable(n)
+
+Reduce : <Dec_Var>  =>  integer<Variable>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Var(n)
+
+Reduce : <Dec_Statement>  =>  <Dec_Var>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+
+Move_In : ;
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+
+Move_In : integer
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+
+Move_In : function
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+
+Move_In : Print
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+
+Move_In : (
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+
+Move_In : y
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : SYMBOL(y)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Variable(y)
+
+Reduce : <Argument>  =>  <Variable>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+
+Move_In : )
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+
+Move_In : ;
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+
+Move_In : begin
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+
+Move_In : integer
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : integer(integer)
+
+Move_In : y
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : integer(integer)
+#24 : SYMBOL(y)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : integer(integer)
+#24 : Variable(y)
+
+Reduce : <Dec_Var>  =>  integer<Variable>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Var(y)
+
+Reduce : <Dec_Statement>  =>  <Dec_Var>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement
+
+Reduce : <_Dec_Statement_List>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement
+#24 : _Dec_Statement_List
+
+Reduce : <Dec_Statement_List>  =>  <Dec_Statement><_Dec_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+
+Move_In : ;
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+
+Move_In : y
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : SYMBOL(y)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Variable(y)
+
+Move_In : :=
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Variable(y)
+#26 : :=(:=)
+
+Move_In : y
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Variable(y)
+#26 : :=(:=)
+#27 : SYMBOL(y)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Variable(y)
+#26 : :=(:=)
+#27 : Variable(y)
+
+Reduce : <Factor>  =>  <Variable>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Variable(y)
+#26 : :=(:=)
+#27 : Factor(y)
+
+Move_In : *
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Variable(y)
+#26 : :=(:=)
+#27 : Factor(y)
+#28 : *(*)
+
+Move_In : 100
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Variable(y)
+#26 : :=(:=)
+#27 : Factor(y)
+#28 : *(*)
+#29 : CONSTANT(100)
+
+Reduce : <Factor>  =>  <CONSTANT>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Variable(y)
+#26 : :=(:=)
+#27 : Factor(y)
+#28 : *(*)
+#29 : Factor(100)
+
+Reduce : <_Item>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Variable(y)
+#26 : :=(:=)
+#27 : Factor(y)
+#28 : *(*)
+#29 : Factor(100)
+#30 : _Item
+
+Reduce : <_Item>  =>  *<Factor><_Item>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Variable(y)
+#26 : :=(:=)
+#27 : Factor(y)
+#28 : _Item
+
+Reduce : <Item>  =>  <Factor><_Item>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Variable(y)
+#26 : :=(:=)
+#27 : Item
+
+Reduce : <_Arith_Expression> => null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Variable(y)
+#26 : :=(:=)
+#27 : Item
+#28 : _Arith_Expression
+
+Reduce : <Arith_Expression>  =>  <Item><Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Variable(y)
+#26 : :=(:=)
+#27 : Arith_Expression
+
+Reduce : <Ass_Statement>  =>  <Variable>:=<Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Ass_Statement(y)
+
+Reduce : <Exe_Statement>  =>  <Ass_Statement>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Exe_Statement
+
+Move_In : ;
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Exe_Statement
+#26 : ;(;)
+
+Move_In : write
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Exe_Statement
+#26 : ;(;)
+#27 : write(write)
+
+Move_In : (
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Exe_Statement
+#26 : ;(;)
+#27 : write(write)
+#28 : ((()
+
+Move_In : y
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Exe_Statement
+#26 : ;(;)
+#27 : write(write)
+#28 : ((()
+#29 : SYMBOL(y)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Exe_Statement
+#26 : ;(;)
+#27 : write(write)
+#28 : ((()
+#29 : Variable(y)
+
+Move_In : )
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Exe_Statement
+#26 : ;(;)
+#27 : write(write)
+#28 : ((()
+#29 : Variable(y)
+#30 : )())
+
+Reduce : <Write_Statement>  →  write(<Variable>)
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Exe_Statement
+#26 : ;(;)
+#27 : Write_Statement
+
+Reduce : <Exe_Statement>  =>  <Write_Statement>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Exe_Statement
+#26 : ;(;)
+#27 : Exe_Statement
+
+Reduce : <_Exe_Statement_List>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Exe_Statement
+#26 : ;(;)
+#27 : Exe_Statement
+#28 : _Exe_Statement_List
+
+Reduce : <_Exe_Statement_List>  =>  ;<Exe_Statement><_Exe_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Exe_Statement
+#26 : _Exe_Statement_List
+
+Reduce : <Exe_Statement_List>  =>  <Exe_Statement><_Exe_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Exe_Statement_List
+
+Move_In : end
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : begin(begin)
+#23 : Dec_Statement_List
+#24 : ;(;)
+#25 : Exe_Statement_List
+#26 : end(end)
+
+Reduce : <Proc_Body>  =>  begin <Dec_Statement_List>;<Exe_Statement_List> end
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : integer(integer)
+#16 : function(function)
+#17 : SYMBOL(Print)
+#18 : ((()
+#19 : Argument(y)
+#20 : )())
+#21 : ;(;)
+#22 : Proc_Body
+
+Reduce : <Dec_Proc>  =>  integer function <SYMBOL>(<Argument>);<Proc_Body>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : Dec_Proc(Print)
+
+Reduce : <Dec_Statement>  =>  <Dec_Proc>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : Dec_Statement
+
+Reduce : <_Dec_Statement_List>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : ;(;)
+#15 : Dec_Statement
+#16 : _Dec_Statement_List
+
+Reduce : <_Dec_Statement_List>  =>  ;<Dec_Statement><_Dec_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : ;(;)
+#13 : Dec_Statement
+#14 : _Dec_Statement_List
+
+Reduce : <_Dec_Statement_List>  =>  ;<Dec_Statement><_Dec_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement
+#12 : _Dec_Statement_List
+
+Reduce : <Dec_Statement_List>  =>  <Dec_Statement><_Dec_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+
+Move_In : ;
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+
+Move_In : if
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+
+Move_In : n
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : SYMBOL(n)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Variable(n)
+
+Reduce : <Factor>  =>  <Variable>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Factor(n)
+
+Reduce : <_Item>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Factor(n)
+#15 : _Item
+
+Reduce : <Item>  =>  <Factor><_Item>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Item
+
+Reduce : <_Arith_Expression> => null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Item
+#15 : _Arith_Expression
+
+Reduce : <Arith_Expression>  =>  <Item><Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Arith_Expression
+
+Move_In : <=
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Arith_Expression
+#15 : <=(<=)
+
+Reduce : <Real_Op>  =>  <=
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Arith_Expression
+#15 : Real_Op(<=)
+
+Move_In : 0
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Arith_Expression
+#15 : Real_Op(<=)
+#16 : CONSTANT(0)
+
+Reduce : <Factor>  =>  <CONSTANT>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Arith_Expression
+#15 : Real_Op(<=)
+#16 : Factor(0)
+
+Reduce : <_Item>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Arith_Expression
+#15 : Real_Op(<=)
+#16 : Factor(0)
+#17 : _Item
+
+Reduce : <Item>  =>  <Factor><_Item>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Arith_Expression
+#15 : Real_Op(<=)
+#16 : Item
+
+Reduce : <_Arith_Expression> => null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Arith_Expression
+#15 : Real_Op(<=)
+#16 : Item
+#17 : _Arith_Expression
+
+Reduce : <Arith_Expression>  =>  <Item><Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Arith_Expression
+#15 : Real_Op(<=)
+#16 : Arith_Expression
+
+Reduce : <Con_Expression>  =>  <Arith_Expression><Real_Op><Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+
+Move_In : then
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+
+Move_In : F
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : SYMBOL(F)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Variable(F)
+
+Move_In : :=
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Variable(F)
+#17 : :=(:=)
+
+Move_In : 1
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Variable(F)
+#17 : :=(:=)
+#18 : CONSTANT(1)
+
+Reduce : <Factor>  =>  <CONSTANT>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Variable(F)
+#17 : :=(:=)
+#18 : Factor(1)
+
+Reduce : <_Item>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Variable(F)
+#17 : :=(:=)
+#18 : Factor(1)
+#19 : _Item
+
+Reduce : <Item>  =>  <Factor><_Item>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Variable(F)
+#17 : :=(:=)
+#18 : Item
+
+Reduce : <_Arith_Expression> => null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Variable(F)
+#17 : :=(:=)
+#18 : Item
+#19 : _Arith_Expression
+
+Reduce : <Arith_Expression>  =>  <Item><Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Variable(F)
+#17 : :=(:=)
+#18 : Arith_Expression
+
+Reduce : <Ass_Statement>  =>  <Variable>:=<Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Ass_Statement(F)
+
+Reduce : <Exe_Statement>  =>  <Ass_Statement>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+
+Move_In : else
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+
+Move_In : F
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : SYMBOL(F)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+
+Move_In : :=
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+
+Move_In : n
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : SYMBOL(n)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Variable(n)
+
+Reduce : <Factor>  =>  <Variable>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+
+Move_In : *
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+
+Move_In : F
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : SYMBOL(F)
+
+Move_In : (
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : SYMBOL(F)
+#23 : ((()
+
+Move_In : n
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : SYMBOL(F)
+#23 : ((()
+#24 : SYMBOL(n)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : SYMBOL(F)
+#23 : ((()
+#24 : Variable(n)
+
+Reduce : <Factor>  =>  <Variable>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : SYMBOL(F)
+#23 : ((()
+#24 : Factor(n)
+
+Reduce : <_Item>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : SYMBOL(F)
+#23 : ((()
+#24 : Factor(n)
+#25 : _Item
+
+Reduce : <Item>  =>  <Factor><_Item>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : SYMBOL(F)
+#23 : ((()
+#24 : Item
+
+Move_In : -
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : SYMBOL(F)
+#23 : ((()
+#24 : Item
+#25 : -(-)
+
+Move_In : 1
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : SYMBOL(F)
+#23 : ((()
+#24 : Item
+#25 : -(-)
+#26 : CONSTANT(1)
+
+Reduce : <Factor>  =>  <CONSTANT>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : SYMBOL(F)
+#23 : ((()
+#24 : Item
+#25 : -(-)
+#26 : Factor(1)
+
+Reduce : <_Item>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : SYMBOL(F)
+#23 : ((()
+#24 : Item
+#25 : -(-)
+#26 : Factor(1)
+#27 : _Item
+
+Reduce : <Item>  =>  <Factor><_Item>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : SYMBOL(F)
+#23 : ((()
+#24 : Item
+#25 : -(-)
+#26 : Item
+
+Reduce : <_Arith_Expression> => null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : SYMBOL(F)
+#23 : ((()
+#24 : Item
+#25 : -(-)
+#26 : Item
+#27 : _Arith_Expression
+
+Reduce : <_Arith_Expression>  =>  -<Item><_Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : SYMBOL(F)
+#23 : ((()
+#24 : Item
+#25 : _Arith_Expression
+
+Reduce : <Arith_Expression>  =>  <Item><Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : SYMBOL(F)
+#23 : ((()
+#24 : Arith_Expression
+
+Move_In : )
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : SYMBOL(F)
+#23 : ((()
+#24 : Arith_Expression
+#25 : )())
+
+Reduce : <Proc_Invoke>  =>  <SYMBOL>(<Arith_Expression>)
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : Proc_Invoke(F)
+
+Reduce : <Factor>  =>  <Proc_Invoke>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : Factor(F)
+
+Reduce : <_Item>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : *(*)
+#22 : Factor(F)
+#23 : _Item
+
+Reduce : <_Item>  =>  *<Factor><_Item>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Factor(n)
+#21 : _Item
+
+Reduce : <Item>  =>  <Factor><_Item>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Item
+
+Reduce : <_Arith_Expression> => null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Item
+#21 : _Arith_Expression
+
+Reduce : <Arith_Expression>  =>  <Item><Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Variable(F)
+#19 : :=(:=)
+#20 : Arith_Expression
+
+Reduce : <Ass_Statement>  =>  <Variable>:=<Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Ass_Statement(F)
+
+Reduce : <Exe_Statement>  =>  <Ass_Statement>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : if(if)
+#14 : Con_Expression
+#15 : then(then)
+#16 : Exe_Statement
+#17 : else(else)
+#18 : Exe_Statement
+
+Reduce : <Con_Statement>  =>  if<Con_Expression>then<Exe_Statement>else<Exe_Statement>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : Con_Statement
+
+Reduce : <Exe_Statement>  =>  <Con_Statement>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : Exe_Statement
+
+Reduce : <_Exe_Statement_List>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : Exe_Statement
+#14 : _Exe_Statement_List
+
+Reduce : <Exe_Statement_List>  =>  <Exe_Statement><_Exe_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : Exe_Statement_List
+
+Move_In : end
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : begin(begin)
+#11 : Dec_Statement_List
+#12 : ;(;)
+#13 : Exe_Statement_List
+#14 : end(end)
+
+Reduce : <Proc_Body>  =>  begin <Dec_Statement_List>;<Exe_Statement_List> end
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : integer(integer)
+#4 : function(function)
+#5 : SYMBOL(F)
+#6 : ((()
+#7 : Argument(n)
+#8 : )())
+#9 : ;(;)
+#10 : Proc_Body
+
+Reduce : <Dec_Proc>  =>  integer function <SYMBOL>(<Argument>);<Proc_Body>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Proc(F)
+
+Reduce : <Dec_Statement>  =>  <Dec_Proc>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+
+Move_In : ;
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+
+Move_In : integer
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+
+Move_In : function
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+
+Move_In : Good
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+
+Move_In : (
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+
+Move_In : z
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : SYMBOL(z)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Variable(z)
+
+Reduce : <Argument>  =>  <Variable>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+
+Move_In : )
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+
+Move_In : ;
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+
+Move_In : begin
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+
+Move_In : integer
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : integer(integer)
+
+Move_In : z
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : integer(integer)
+#14 : SYMBOL(z)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : integer(integer)
+#14 : Variable(z)
+
+Reduce : <Dec_Var>  =>  integer<Variable>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : Dec_Var(z)
+
+Reduce : <Dec_Statement>  =>  <Dec_Var>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : Dec_Statement
+
+Reduce : <_Dec_Statement_List>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : Dec_Statement
+#14 : _Dec_Statement_List
+
+Reduce : <Dec_Statement_List>  =>  <Dec_Statement><_Dec_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : Dec_Statement_List
+
+Move_In : ;
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : Dec_Statement_List
+#14 : ;(;)
+
+Move_In : read
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : Dec_Statement_List
+#14 : ;(;)
+#15 : read(read)
+
+Move_In : (
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : Dec_Statement_List
+#14 : ;(;)
+#15 : read(read)
+#16 : ((()
+
+Move_In : z
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : Dec_Statement_List
+#14 : ;(;)
+#15 : read(read)
+#16 : ((()
+#17 : SYMBOL(z)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : Dec_Statement_List
+#14 : ;(;)
+#15 : read(read)
+#16 : ((()
+#17 : Variable(z)
+
+Move_In : )
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : Dec_Statement_List
+#14 : ;(;)
+#15 : read(read)
+#16 : ((()
+#17 : Variable(z)
+#18 : )())
+
+Reduce : <Read_Statement>  →  read(<Variable>)
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : Dec_Statement_List
+#14 : ;(;)
+#15 : Read_Statement
+
+Reduce : <Exe_Statement>  =>  <Read_Statement>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : Dec_Statement_List
+#14 : ;(;)
+#15 : Exe_Statement
+
+Reduce : <_Exe_Statement_List>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : Dec_Statement_List
+#14 : ;(;)
+#15 : Exe_Statement
+#16 : _Exe_Statement_List
+
+Reduce : <Exe_Statement_List>  =>  <Exe_Statement><_Exe_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : Dec_Statement_List
+#14 : ;(;)
+#15 : Exe_Statement_List
+
+Move_In : end
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : begin(begin)
+#13 : Dec_Statement_List
+#14 : ;(;)
+#15 : Exe_Statement_List
+#16 : end(end)
+
+Reduce : <Proc_Body>  =>  begin <Dec_Statement_List>;<Exe_Statement_List> end
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : integer(integer)
+#6 : function(function)
+#7 : SYMBOL(Good)
+#8 : ((()
+#9 : Argument(z)
+#10 : )())
+#11 : ;(;)
+#12 : Proc_Body
+
+Reduce : <Dec_Proc>  =>  integer function <SYMBOL>(<Argument>);<Proc_Body>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : Dec_Proc(Good)
+
+Reduce : <Dec_Statement>  =>  <Dec_Proc>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : Dec_Statement
+
+Move_In : ;
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : Dec_Statement
+#6 : ;(;)
+
+Move_In : integer
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : Dec_Statement
+#6 : ;(;)
+#7 : integer(integer)
+
+Move_In : m
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : Dec_Statement
+#6 : ;(;)
+#7 : integer(integer)
+#8 : SYMBOL(m)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : Dec_Statement
+#6 : ;(;)
+#7 : integer(integer)
+#8 : Variable(m)
+
+Reduce : <Dec_Var>  =>  integer<Variable>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : Dec_Statement
+#6 : ;(;)
+#7 : Dec_Var(m)
+
+Reduce : <Dec_Statement>  =>  <Dec_Var>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : Dec_Statement
+#6 : ;(;)
+#7 : Dec_Statement
+
+Reduce : <_Dec_Statement_List>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : Dec_Statement
+#6 : ;(;)
+#7 : Dec_Statement
+#8 : _Dec_Statement_List
+
+Reduce : <_Dec_Statement_List>  =>  ;<Dec_Statement><_Dec_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : ;(;)
+#5 : Dec_Statement
+#6 : _Dec_Statement_List
+
+Reduce : <_Dec_Statement_List>  =>  ;<Dec_Statement><_Dec_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : ;(;)
+#3 : Dec_Statement
+#4 : _Dec_Statement_List
+
+Reduce : <_Dec_Statement_List>  =>  ;<Dec_Statement><_Dec_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement
+#2 : _Dec_Statement_List
+
+Reduce : <Dec_Statement_List>  =>  <Dec_Statement><_Dec_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+
+Move_In : ;
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+
+Move_In : read
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : read(read)
+
+Move_In : (
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : read(read)
+#4 : ((()
+
+Move_In : m
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : read(read)
+#4 : ((()
+#5 : SYMBOL(m)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : read(read)
+#4 : ((()
+#5 : Variable(m)
+
+Move_In : )
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : read(read)
+#4 : ((()
+#5 : Variable(m)
+#6 : )())
+
+Reduce : <Read_Statement>  →  read(<Variable>)
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Read_Statement
+
+Reduce : <Exe_Statement>  =>  <Read_Statement>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+
+Move_In : ;
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+
+Move_In : k
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : SYMBOL(k)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+
+Move_In : :=
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+
+Move_In : F
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+#7 : SYMBOL(F)
+
+Move_In : (
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+#7 : SYMBOL(F)
+#8 : ((()
+
+Move_In : m
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+#7 : SYMBOL(F)
+#8 : ((()
+#9 : SYMBOL(m)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+#7 : SYMBOL(F)
+#8 : ((()
+#9 : Variable(m)
+
+Reduce : <Factor>  =>  <Variable>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+#7 : SYMBOL(F)
+#8 : ((()
+#9 : Factor(m)
+
+Reduce : <_Item>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+#7 : SYMBOL(F)
+#8 : ((()
+#9 : Factor(m)
+#10 : _Item
+
+Reduce : <Item>  =>  <Factor><_Item>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+#7 : SYMBOL(F)
+#8 : ((()
+#9 : Item
+
+Reduce : <_Arith_Expression> => null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+#7 : SYMBOL(F)
+#8 : ((()
+#9 : Item
+#10 : _Arith_Expression
+
+Reduce : <Arith_Expression>  =>  <Item><Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+#7 : SYMBOL(F)
+#8 : ((()
+#9 : Arith_Expression
+
+Move_In : )
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+#7 : SYMBOL(F)
+#8 : ((()
+#9 : Arith_Expression
+#10 : )())
+
+Reduce : <Proc_Invoke>  =>  <SYMBOL>(<Arith_Expression>)
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+#7 : Proc_Invoke(F)
+
+Reduce : <Factor>  =>  <Proc_Invoke>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+#7 : Factor(F)
+
+Reduce : <_Item>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+#7 : Factor(F)
+#8 : _Item
+
+Reduce : <Item>  =>  <Factor><_Item>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+#7 : Item
+
+Reduce : <_Arith_Expression> => null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+#7 : Item
+#8 : _Arith_Expression
+
+Reduce : <Arith_Expression>  =>  <Item><Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Variable(k)
+#6 : :=(:=)
+#7 : Arith_Expression
+
+Reduce : <Ass_Statement>  =>  <Variable>:=<Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Ass_Statement(k)
+
+Reduce : <Exe_Statement>  =>  <Ass_Statement>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+
+Move_In : ;
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+
+Move_In : m
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : SYMBOL(m)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+
+Move_In : :=
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+
+Move_In : Good
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+#9 : SYMBOL(Good)
+
+Move_In : (
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+#9 : SYMBOL(Good)
+#10 : ((()
+
+Move_In : k
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+#9 : SYMBOL(Good)
+#10 : ((()
+#11 : SYMBOL(k)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+#9 : SYMBOL(Good)
+#10 : ((()
+#11 : Variable(k)
+
+Reduce : <Factor>  =>  <Variable>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+#9 : SYMBOL(Good)
+#10 : ((()
+#11 : Factor(k)
+
+Reduce : <_Item>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+#9 : SYMBOL(Good)
+#10 : ((()
+#11 : Factor(k)
+#12 : _Item
+
+Reduce : <Item>  =>  <Factor><_Item>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+#9 : SYMBOL(Good)
+#10 : ((()
+#11 : Item
+
+Reduce : <_Arith_Expression> => null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+#9 : SYMBOL(Good)
+#10 : ((()
+#11 : Item
+#12 : _Arith_Expression
+
+Reduce : <Arith_Expression>  =>  <Item><Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+#9 : SYMBOL(Good)
+#10 : ((()
+#11 : Arith_Expression
+
+Move_In : )
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+#9 : SYMBOL(Good)
+#10 : ((()
+#11 : Arith_Expression
+#12 : )())
+
+Reduce : <Proc_Invoke>  =>  <SYMBOL>(<Arith_Expression>)
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+#9 : Proc_Invoke(Good)
+
+Reduce : <Factor>  =>  <Proc_Invoke>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+#9 : Factor(Good)
+
+Reduce : <_Item>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+#9 : Factor(Good)
+#10 : _Item
+
+Reduce : <Item>  =>  <Factor><_Item>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+#9 : Item
+
+Reduce : <_Arith_Expression> => null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+#9 : Item
+#10 : _Arith_Expression
+
+Reduce : <Arith_Expression>  =>  <Item><Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Variable(m)
+#8 : :=(:=)
+#9 : Arith_Expression
+
+Reduce : <Ass_Statement>  =>  <Variable>:=<Arith_Expression>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Ass_Statement(m)
+
+Reduce : <Exe_Statement>  =>  <Ass_Statement>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Exe_Statement
+
+Move_In : ;
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Exe_Statement
+#8 : ;(;)
+
+Move_In : write
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Exe_Statement
+#8 : ;(;)
+#9 : write(write)
+
+Move_In : (
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Exe_Statement
+#8 : ;(;)
+#9 : write(write)
+#10 : ((()
+
+Move_In : k
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Exe_Statement
+#8 : ;(;)
+#9 : write(write)
+#10 : ((()
+#11 : SYMBOL(k)
+
+Reduce : <Variable>  =>  <SYMBOL>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Exe_Statement
+#8 : ;(;)
+#9 : write(write)
+#10 : ((()
+#11 : Variable(k)
+
+Move_In : )
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Exe_Statement
+#8 : ;(;)
+#9 : write(write)
+#10 : ((()
+#11 : Variable(k)
+#12 : )())
+
+Reduce : <Write_Statement>  →  write(<Variable>)
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Exe_Statement
+#8 : ;(;)
+#9 : Write_Statement
+
+Reduce : <Exe_Statement>  =>  <Write_Statement>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Exe_Statement
+#8 : ;(;)
+#9 : Exe_Statement
+
+Reduce : <_Exe_Statement_List>  =>  null
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Exe_Statement
+#8 : ;(;)
+#9 : Exe_Statement
+#10 : _Exe_Statement_List
+
+Reduce : <_Exe_Statement_List>  =>  ;<Exe_Statement><_Exe_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : ;(;)
+#7 : Exe_Statement
+#8 : _Exe_Statement_List
+
+Reduce : <_Exe_Statement_List>  =>  ;<Exe_Statement><_Exe_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : ;(;)
+#5 : Exe_Statement
+#6 : _Exe_Statement_List
+
+Reduce : <_Exe_Statement_List>  =>  ;<Exe_Statement><_Exe_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement
+#4 : _Exe_Statement_List
+
+Reduce : <Exe_Statement_List>  =>  <Exe_Statement><_Exe_Statement_List>
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement_List
+
+Move_In : end
+
+Stack:
+#0 : begin(begin)
+#1 : Dec_Statement_List
+#2 : ;(;)
+#3 : Exe_Statement_List
+#4 : end(end)
+
+Reduce : <Program>  =>  begin <Dec_Statement_List>;<Exe_Statement_List> end
+
+Stack:
+#0 : Program
+

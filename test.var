@@ -1,0 +1,7 @@
+vname    vproc    vkind   vtype   vlev   vadr
+k        main       0       0      0      0
+m        main       0       0      0      5
+n        F       1       0      1      2
+x        F       0       0      1      1
+y        Print       1       0      2      3
+z        Good       1       0      1      4

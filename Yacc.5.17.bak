@@ -1,0 +1,612 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <stack>
+#include <map>
+#include <stdlib.h>
+#define $BEGIN	1
+#define $END	2
+#define $INTEGER	3
+#define $IF	4
+#define $THEN	5
+#define $ELSE	6
+#define $FUNCTION	7
+#define $READ	8
+#define $WRITE	9
+#define $SYMBOL	10
+#define $CONSTANT	11
+#define $EQU	12
+#define $NEQU	13
+#define $LE	14
+#define $L	15
+#define $GE	16
+#define $G	17
+#define $SUB	18
+#define $MUL	19
+#define $ASSIGN	20
+#define $LPAR	21
+#define $RPAR	22
+#define $SEM	23
+#define $EOLN 24
+#define $EOF 25
+using namespace std;
+
+string Name[] =  {"",
+"$BEGIN",
+"$END",
+"$INTEGER",
+"$IF",
+"$THEN",
+"$ELSE",
+"$FUNCTION",
+"$READ",
+"$WRITE",
+"$SYMBOL",
+"$CONSTANT",
+"$EQU",
+"$NEQU",
+"$LE",
+"$L",
+"$GE",
+"$G",
+"$SUB",
+"$MUL",
+"$ASSIGN",
+"$LPAR",
+"$RPAR",
+"$SEM",
+"$EOLN",
+"$EOF"
+};
+
+struct BinExp
+{
+	string val;
+	int type;
+	BinExp() {}
+	BinExp(string s,int x){
+		val = s;
+		type = x;
+	}
+	void print(){
+		cout << val <<" " << type <<endl;
+	}
+	void read(ifstream &fin){
+		fin >> val >> type;
+	}
+};
+
+struct Var
+{
+	string vname;
+	string vproc;
+	int vkind;
+	int vtype;
+	int vlev;
+	int vadr;
+};
+
+struct Proc
+{
+	string pname;
+	string ptype;
+	int plev;
+	int fadr;
+	int ladr;
+};
+
+string fileName;
+vector<BinExp> Bin;
+map<string,Var> var;
+map<string,Proc> proc;
+stack<string> proc_stk;
+
+int pos;
+ofstream fout;
+int line;
+int lookahead;
+int Error_Able;
+
+bool Exe_Statement();
+bool Con_Statement();
+bool Proc_Body();
+bool Proc_Invoke();
+
+string getfileName(string s){
+	int pos = s.find(".");
+	return s.substr(0,pos);
+}
+
+void calcLine(){
+	line=0;
+	for (int i=0;i<=lookahead;i++)
+		if (Bin[i].type==$EOLN)
+			line++;
+}
+
+void error(string msg){
+	calcLine();
+	if (Error_Able==1) fout << "***LINE:"<< line <<"  " << msg <<endl;
+}
+
+void error_expect(int x){
+	calcLine();
+	if (Error_Able==1) fout << "***LINE:"<< line <<"  " << Name[x]+" expected instead of "+Name[Bin[lookahead].type] <<endl;
+}
+
+void advance()
+{
+	if (Bin[lookahead].type!=$EOF)
+		lookahead++;
+	while (Bin[lookahead].type==$EOLN)
+		line++,lookahead++;
+}
+
+bool match(int id)
+{
+	if (Bin[lookahead].type==id)
+	{
+		advance();
+		return true;
+	}
+	return false;
+}
+
+bool Variable()
+{
+	if (match($SYMBOL))
+	{
+		printf("<Variable>  =>  <SYMBOL>\n");
+		return true;
+	} else error_expect($SYMBOL);
+	return false;
+}
+
+bool Argument()
+{
+	if (Variable())
+	{
+		printf("<Argument>  =>  <Variable>\n");
+		return true;
+	}
+	return false;
+}
+
+bool Dec_Var()
+{
+	if (match($INTEGER))
+	{
+		if (Variable()) {
+			printf("<Dec_Var>  =>  integer<Variable>\n");
+			return true;
+		}
+	} else error_expect($INTEGER);
+	return false;
+}
+
+bool Read_Statement()
+{
+	if (match($READ))
+	{
+		if (match($LPAR))
+		{
+			if (!Variable()) return false;
+		} 	else { error_expect($LPAR); return false;}
+		if (match($RPAR))
+		{
+			printf("<Exe_Statement>  =>  <Read_Statement>\n");
+			return true;
+		}	else { error_expect($RPAR); return false;}
+	} else error_expect($READ);
+	return false;
+}
+
+bool Write_Statement()
+{
+	if (match($WRITE))
+	{
+		if (match($LPAR))
+		{
+			if (!Variable()) return false;
+		}	else { error_expect($LPAR); return false;}
+		if (match($RPAR))
+		{
+			printf("<Exe_Statement>  =>  <Write_Statement>\n");
+			return true;
+		}	else { error_expect($RPAR);	return false;}
+	} else error_expect($WRITE);
+	return false;
+}
+
+bool Factor()
+{
+	int backup = lookahead;
+	Error_Able--;
+	if (match($CONSTANT))
+	{
+		printf("<Factor>  =>  <CONSTANT>\n");
+		Error_Able++;
+		return true;
+	} else
+	{
+		if (Proc_Invoke())
+		{
+			printf("<Factor>  =>  <Proc_Invoke>\n");
+			Error_Able++;
+			return true;
+		} else {
+			lookahead = backup;
+			if (Variable())
+			{
+				printf("<Factor>  =>  <Variable>\n");
+				Error_Able++;
+				return true;
+			} else lookahead = backup;
+		}
+	}
+	lookahead = backup;
+	Error_Able++;
+	error("$CONSTANT or $SYMBOL expected instead of "+Name[Bin[lookahead].type]);
+	return false;
+}
+
+bool _Item()
+{
+	int backup = lookahead;
+	Error_Able--;
+	if (match($MUL))
+	{
+		if (Factor()&&_Item())
+		{
+			printf("<_Item>  =>  *<Factor><_Item>\n");
+			Error_Able++;
+			return true;
+		}
+	}
+	Error_Able++;
+	lookahead = backup;
+	printf("<_Item>  =>  null\n");
+	return true;
+}
+
+bool Item()
+{
+	if (!Factor()) return false;
+	if (!_Item()) return false;
+	printf("<Item>  =>  <Factor><_Item>\n");
+	return true;
+}
+
+bool _Arith_Expression()
+{
+	int backup = lookahead;
+	Error_Able--;
+	if (match($SUB))
+	{
+		if (Item()&&_Arith_Expression())
+		{
+			printf("<_Arith_Expression>  =>  -<Item><_Arith_Expression>\n");
+			Error_Able++;
+			return true;
+		}
+	}
+	Error_Able++;
+	lookahead = backup;
+	printf("<_Arith_Expression> => null\n");
+	return true;
+}
+
+bool Arith_Expression()
+{
+	if (!Item()) return false;
+	if (!_Arith_Expression()) return false;
+	printf("<Arith_Expression>  =>  <Item><Arith_Expression>\n");
+	return true;
+}
+
+bool Proc_Invoke()
+{
+	if (match($SYMBOL))
+	{
+		if (match($LPAR))
+		{
+			if (!Arith_Expression()) return false;
+		} else { error_expect($LPAR); return false;}
+		if (match($RPAR))
+		{
+			printf("<Proc_Invoke>  =>  <SYMBOL>(<Arith_Expression>)\n");
+			return true;
+		} else { error_expect($RPAR); return false;}
+	} else error_expect($SYMBOL);
+	return false;
+}
+
+bool Ass_Statement()
+{
+	if (!Variable()) return false;
+	if (match($ASSIGN))
+	{
+		if (Arith_Expression()){
+			printf("<Ass_Statement>  =>  <Variable>:=<Arith_Expression>\n");
+			return true;
+		}
+	} else { error_expect($ASSIGN); return false;}
+	return false;
+}
+
+bool Real_Op()
+{
+	if (match($EQU))
+	{
+		printf("<Real_Op>  =>  =\n");
+		return true;
+	} else
+	if (match($L))
+	{
+		printf("<Real_Op>  =>  <\n");
+		return true;
+	} else
+	if (match($LE))
+	{
+		printf("<Real_Op>  =>  <=\n");
+		return true;
+	} else
+	if (match($G))
+	{
+		printf("<Real_Op>  =>  >\n");
+		return true;
+	} else
+	if (match($GE))
+	{
+		printf("<Real_Op>  =>  >=\n");
+		return true;
+	} else
+	if (match($NEQU))
+	{
+		printf("<Real_Op>  =>  <>\n");
+		return true;
+	}
+	error("< or <= or = or >= or > or <> expected instead of "+Name[Bin[lookahead].type]);
+	return false;
+}
+
+bool Con_Express()
+{
+	if (!Arith_Expression()) return false;
+	if (!Real_Op()) return false;
+	if (!Arith_Expression()) return false;
+	printf("<Con_Express>  =>  <Arith_Expression><Real_Op><Arith_Expression>\n");
+	return true;
+}
+
+bool Con_Statement()
+{
+	if (match($IF))
+	{
+		if (!Con_Express()) return false;
+		if (match($THEN))
+		{
+			if (!Exe_Statement()) return false;
+			if (match($ELSE))
+			{
+				if (!Exe_Statement()) return false;
+				printf("<Con_Statement>  =>  if<Con_Express>then<Exe_Statement>else<Exe_Statement>\n");
+				return true;
+			} else { error_expect($ELSE); return false;}
+		} else { error_expect($THEN); return false;}
+	} else { error_expect($IF); return false;}
+	return false;
+}
+
+bool Exe_Statement()
+{
+	int backup = lookahead;
+	Error_Able--;
+	if (Read_Statement())
+	{
+		printf("<Exe_Statement>  =>  <Read_Statement>\n");
+		Error_Able++;
+		return true;
+	} else
+	{
+		lookahead = backup;
+		if (Write_Statement())
+		{
+			printf("<Exe_Statement>  =>  <Write_Statement>\n");
+			Error_Able++;
+			return true;
+		} else
+		{
+			lookahead = backup;
+			if (Ass_Statement())
+			{
+				printf("<Exe_Statement>  =>  <Ass_Statement>\n");
+				Error_Able++;
+				return true;
+			} else
+			{
+				lookahead = backup;
+				if (Con_Statement())
+				{
+					printf("<Exe_Statement>  =>  <Con_Statement>\n");
+					Error_Able++;
+					return true;
+				}
+			}
+		}
+	}
+	lookahead = backup;
+	Error_Able++;
+	error("$READ or $WRITE or $SYMBOL or $IF expected instead of "+Name[Bin[lookahead].type]);
+	return false;
+}
+
+bool _Exe_Statement_List()
+{
+	int backup = lookahead;
+	Error_Able--;
+	if (match($SEM))
+	{
+		if (Exe_Statement()&&_Exe_Statement_List()){
+			printf("<_Exe_Statement_List>  =>  ;<Exe_Statement><_Exe_Statement_List>\n");
+			Error_Able++;
+			return true;
+		}
+	}
+	Error_Able++;
+	lookahead = backup;
+	printf("<_Exe_Statement_List>  =>  null\n");
+	return true;
+}
+
+bool Exe_Statement_List()
+{
+	if (!Exe_Statement()) return false;
+	if (!_Exe_Statement_List()) return false;
+	printf("<Exe_Statement_List>  =>  <Exe_Statement><_Exe_Statement_List>\n");
+	return true;
+}
+
+bool Dec_Proc()
+{
+	if (match($INTEGER))
+	{
+		if (match($FUNCTION))
+		{
+			if (match($SYMBOL))
+			{
+				if (match($LPAR))
+				{
+					if (!Argument()) return false;
+					if (match($RPAR))
+					{
+						if (match($SEM))
+						{
+							if (Proc_Body())
+							{
+								printf("<Dec_Proc>  =>  integer function <SYMBOL>(<Argument>);<Proc_Body>\n");
+								return true;
+							}
+						} else { error_expect($SEM); return false;}
+					} else { error_expect($RPAR); return false;}
+				} else { error_expect($LPAR); return false;}
+			} else { error_expect($SYMBOL); return false;}
+		} else { error_expect($FUNCTION); return false;}
+	} else { error_expect($INTEGER); return false;}
+	return false;
+}
+
+bool Dec_Statement()
+{
+	int backup = lookahead;
+	Error_Able--;
+	if (Dec_Var())
+	{
+		printf("<Dec_Statement>  =>  <Dec_Var>\n");
+		Error_Able++;
+		return true;
+	} else
+	{
+		lookahead = backup;
+		if (Dec_Proc()){
+			printf("<Dec_Statement>  =>  <Dec_Proc>\n");
+			Error_Able++;
+			return true;
+		}
+	}
+	lookahead = backup;
+	Error_Able++;
+	error("$INTEGER expected instead of "+Name[Bin[lookahead].type]);
+	return false;
+}
+
+bool _Dec_Statement_List()
+{
+	int backup = lookahead;
+	Error_Able--;
+	if (match($SEM))
+	{
+		if (Dec_Statement()&&_Dec_Statement_List())
+		{
+			printf("<_Dec_Statement_List>  =>  ;<Dec_Statement><_Dec_Statement_List>\n");
+			Error_Able++;
+			return true;
+		}
+	}
+	Error_Able++;
+	lookahead = backup;
+	printf("<_Dec_Statement_List>  =>  null\n");
+	return true;
+}
+
+bool Dec_Statement_List()
+{
+	if (!Dec_Statement()) return false;
+	if (!_Dec_Statement_List()) return false;
+	printf("<Dec_Statement_List>  =>  <Dec_Statement><_Dec_Statement_List>\n");
+	return true;
+}
+
+bool Proc_Body()
+{
+	if (match($BEGIN))
+	{
+		if (!Dec_Statement_List()) return false;
+		if (match($SEM))
+		{
+			if (!Exe_Statement_List()) return false;
+			if (match($END))
+			{
+				printf("<Proc_Body>  =>  begin <Dec_Statement_List>;<Exe_Statement_List> end\n");
+				return true;
+			} { error_expect($END); return false;}
+		} else { error_expect($SEM); return false;}
+	}{ error_expect($BEGIN); return false;}
+	return false;
+}
+
+bool Program()
+{
+	if (match($BEGIN))
+	{
+		if (!Dec_Statement_List()) return false;
+		if (match($SEM))
+		{
+			if (!Exe_Statement_List()) return false;
+			if (match($END))
+			{
+				printf("<Program>  =>  begin <Dec_Statement_List>;<Exe_Statement_List> end\n");
+				return true;
+			} { error_expect($END); return false;}
+		} else { error_expect($SEM); return false;}
+	} else { error_expect($BEGIN); return false;}
+	return false;
+}
+
+
+int main(int arg,char **args)
+{	
+	fileName = getfileName(string(args[1]));
+	fout.open((fileName+".yacc.err").c_str());
+	ifstream fin(args[1]);
+
+	freopen((fileName+".dys").c_str(),"w",stdout);
+
+	if (!fin.is_open()){
+		cout << "can't open file!" <<endl;
+		return 0;
+	} else {
+		while (!fin.eof()){
+			BinExp tmp;
+			tmp.read(fin);
+			Bin.push_back(tmp);
+			if (tmp.type==$EOF)
+				break;
+		}
+		line = lookahead = 0;
+		Error_Able = 1;
+		Program();
+	}
+	return 0;
+}
