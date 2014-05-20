@@ -191,6 +191,15 @@ bool match(int id)
 		stk[top++]=Element(Name[id],Bin[lookahead].val,1);
 		advance();
 		return true;
+	} else {
+		if (id==$SEM&&Bin[lookahead].type==$END) return false;
+		if (id==$SEM||id==$RPAR||id==$END){
+			error_expect(id);
+			printStack();
+			printf("Move_In : %s\n",Name[id].c_str());
+			stk[top++]=Element(Name[id],Name[id],1);
+			return true;
+		}
 	}
 	return false;
 }
@@ -717,7 +726,7 @@ int find_next(int pos)
 
 bool _Dec_Statement_List()
 {
-	if (Bin[lookahead].type==$SEM&&Bin[find_next(lookahead+1)].type==$INTEGER)
+	if (((Bin[lookahead].type==$SEM||true)&&Bin[find_next(lookahead+1)].type==$INTEGER)||(Bin[lookahead].type==$INTEGER))
 	{
 		match($SEM);
 		if (Dec_Statement()&&_Dec_Statement_List())
